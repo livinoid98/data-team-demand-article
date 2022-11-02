@@ -1,0 +1,102 @@
+.main-wrap .create-form-wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+.main-wrap .create-form-wrap form input {
+  box-sizing: border-box;
+  padding: 40px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #949494;
+}
+.main-wrap .create-form-wrap form input[name=title] {
+  width: 1200px;
+  height: 80px;
+  background-color: #fff;
+  margin-top: 96px;
+}
+.main-wrap .create-form-wrap form input[name=team] {
+  width: 580px;
+  height: 80px;
+  background-color: #fff;
+  margin-top: 22px;
+}
+.main-wrap .create-form-wrap form input[name=name] {
+  width: 580px;
+  height: 80px;
+  background-color: #fff;
+  margin-left: 36px;
+  margin-top: 22px;
+}
+.main-wrap .create-form-wrap form input[name=pageurl] {
+  width: 1200px;
+  height: 80px;
+  background-color: #fff;
+  margin-top: 22px;
+}
+.main-wrap .create-form-wrap form input[name=content] {
+  width: 1200px;
+  height: 590px;
+  margin-top: 22px;
+}
+.main-wrap .create-form-wrap form input[name=deadline] {
+  width: 300px;
+  height: 80px;
+  margin-top: 22px;
+}
+.main-wrap .create-form-wrap form input[type=file] {
+  width: 580px;
+  height: 80px;
+  position: relative;
+  top: 12px;
+  background-color: #fff;
+  margin-left: 10px;
+}
+.main-wrap .create-form-wrap form .confirm1, .main-wrap .create-form-wrap form .confirm2 {
+  display: inline-block;
+  margin-top: 22px;
+}
+.main-wrap .create-form-wrap form .confirm1 {
+  margin-left: 30px;
+}
+.main-wrap .create-form-wrap form .confirm1 .vertical-center {
+  display: flex;
+  align-items: center;
+}
+.main-wrap .create-form-wrap form .confirm1 .vertical-center input[type=checkbox] {
+  width: 46px;
+  height: 46px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+.main-wrap .create-form-wrap form .confirm2 {
+  margin-left: 30px;
+}
+.main-wrap .create-form-wrap form .confirm2 .vertical-center {
+  display: flex;
+  align-items: center;
+}
+.main-wrap .create-form-wrap form .confirm2 .vertical-center input[type=checkbox] {
+  width: 46px;
+  height: 46px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+.main-wrap .create-form-wrap form .submit-button-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 38px;
+}
+.main-wrap .create-form-wrap form .submit-button-wrap .create-submit {
+  width: 200px;
+  height: 46px;
+  padding: 0px;
+  background-color: #BAEBF1;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #47A6B0;
+}/*# sourceMappingURL=create.css.map */

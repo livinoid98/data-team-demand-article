@@ -7,11 +7,40 @@
     <title>공홈 요청사항 정의서</title>
     <link rel="stylesheet" href="./css/reset.css" type="text/css" />
     <link rel="stylesheet" href="./css/layout.css" type="text/css"/>
-    <link rel="stylesheet" href="./css/layout.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/create.css" type="text/css" />
+    <link rel="stylesheet" href="./css/footer.css" type="text/css"/>
 </head>
 <body>
     <%- include ("./components/layout.ejs") %>
-    
+    <div class="main-wrap">
+        <h3>요구사항 작성</h3>
+        <div class="create-form-wrap">
+            <form action="post">
+                <input type="text" name="title" placeholder="제목" />
+                <input type="text" name="team" placeholder="소속" />
+                <input type="text" name="name" placeholder="성함" />
+                <input type="text" name="pageurl" placeholder="URL (수정 페이지 URL)" />
+                <input type="text" name="content" placeholder="ISSUE (상세내용)" />
+                <input type="date" name="deadline" placeholder="마감기한" />
+                <input type="file"/>
+                <div class="confirm1">
+                    <div class="vertical-center">
+                        <label for="confirm1">1차검토</label>
+                        <input type="checkbox" id="confirm1"/>
+                    </div>
+                </div>
+                <div class="confirm2">
+                    <div class="vertical-center">
+                        <label for="confirm2">최종완료</label>
+                        <input type="checkbox" id="confirm2"/>
+                    </div>
+                </div>
+                <div class="submit-button-wrap">
+                    <input type="submit" value="작성하기" class="create-submit"/>
+                </div>
+            </form>
+        </div>
+    </div>
     <%- include ("./components/footer.ejs") %>
 </body>
 </html>

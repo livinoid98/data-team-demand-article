@@ -14,7 +14,7 @@ header {
 }
 header h1 {
   font-family: "Philosopher";
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
 }
 header nav ul {
@@ -22,16 +22,30 @@ header nav ul {
 }
 header nav ul li {
   margin-left: 30px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   word-break: keep-all;
 }
 
-@media only screen and (min-width: 768px) {
-  header h1 {
-    font-size: 18px;
+.main-wrap {
+  background-color: #EEEEEE;
+  padding-bottom: 82px;
+}
+.main-wrap h3 {
+  padding-top: 104px;
+  padding-left: 40px;
+  font-size: 30px;
+  font-weight: 500;
+  color: #949494;
+}
+
+@media screen and (min-width: 768px) {
+  .main-wrap h3 {
+    padding-left: 170px;
   }
-  nav ul li {
-    font-size: 16px;
+}
+@media screen and (min-width: 1024px) {
+  .main-wrap h3 {
+    padding-left: 170px;
   }
 }/*# sourceMappingURL=layout.css.map */

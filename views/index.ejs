@@ -24,14 +24,23 @@
                     <p>제안자: <span>성장운영본부 데이터팀 / 최찬영</span></p>
                 </div>
                 <div class="button-wrap">
-                    <div class="confirm1"></div>
-                    <div class="confirm2"></div>
-                    <button><a href="#none">수정하기</a></button>
-                    <button><a href="#none"></a></button>
+                    <div class="confirm1">
+                        <label for="check1">1차검토</label>
+                        <input type="checkbox" id="check1"/>
+                    </div>
+                    <div class="confirm2">
+                        <label for="check2">최종완료</label>
+                        <input type="checkbox" id="check2"/>
+                    </div>
+                    <button class="edit-button"><a href="#none">수정하기</a></button>
+                    <button class="remove-button"><a href="#none"><img src="./img/trash_icon.png" alt=""/></a></button>
                 </div>
             </li>
+            <div class="create-wrap">
+                <button class="create-button"><a href="/create">글쓰기</a></button>
+            </div>
         </ul>
-        <button><a href="#none">글쓰기</a></button>
+        
     </div>
     <%- include ("./components/footer.ejs") %>
 </body>
