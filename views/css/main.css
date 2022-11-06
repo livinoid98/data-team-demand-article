@@ -9,9 +9,12 @@
   margin: 0 auto;
   margin-top: 14px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: relative;
+}
+.main-wrap .content-wrap .list-wrap:nth-child(1) {
+  margin-top: 94px;
 }
 .main-wrap .content-wrap .list-wrap .article-num {
   position: relative;
@@ -29,6 +32,7 @@
 .main-wrap .content-wrap .list-wrap .article-content {
   width: auto;
   position: relative;
+  margin-right: auto;
 }
 .main-wrap .content-wrap .list-wrap .article-content h4 {
   font-size: 30px;
@@ -56,6 +60,8 @@
   font-size: 10px;
   font-weight: 400;
   color: #949494;
+  position: relative;
+  top: -6px;
 }
 .main-wrap .content-wrap .list-wrap .button-wrap .confirm1 input {
   width: 46px;
@@ -75,6 +81,8 @@
   font-size: 10px;
   font-weight: 400;
   color: #949494;
+  position: relative;
+  top: -6px;
 }
 .main-wrap .content-wrap .list-wrap .button-wrap .confirm2 input {
   width: 46px;

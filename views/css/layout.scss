@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
 a{
     color:inherit;
     text-decoration: none;
@@ -20,6 +24,7 @@ header{
         ul{
             display:flex;
             li{
+                font-family:'Prentendard';
                 margin-left:30px;
                 font-size:16px;
                 font-weight:500;
@@ -33,26 +38,12 @@ header{
     background-color:#EEEEEE;
     padding-bottom:82px;
     h3{
+        width:1200px;
+        margin:0 auto;
         padding-top:104px;
-        padding-left:40px;
+        padding-left:170px;
         font-size:30px;
         font-weight:500;
         color:#949494;
-    }
-}
-
-@media screen and (min-width: 768px){
-    .main-wrap{
-        h3{
-            padding-left:170px;
-        }
-    }
-}
-
-@media screen and (min-width: 1024px){
-    .main-wrap{
-        h3{
-            padding-left:170px;
-        }
     }
 }

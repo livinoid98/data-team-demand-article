@@ -8,17 +8,26 @@ let connection = mysql.createPool({
   host:'127.0.0.1',
   port:3306,
   user:'root',
-  password:'skxortn1!',
-  database: 'data_team'
+  password:'admin123',
+  database: 'data_team',
+  connectionLimit: 50
 });
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 app.use(express.static('views'));
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 app.get('/', (req, res) => {
-  res.render('index.ejs', {});
+  let sql = 'select * from checklist order by id desc';
+  connection.query(sql, function(err, results, fields){
+    if(err){
+      throw err;
+    }
+    res.render('index.ejs',{records:results});
+  });
 });
 
 app.get('/create', (req,res) => {
@@ -26,9 +35,38 @@ app.get('/create', (req,res) => {
 });
 
 app.post('/create', (req,res) => {
-  let sql = `insert into checklist ("id", "title", "team", "name", "pageurl", "content", "deadline") values('test','성장운영본부 데이터팀','최찬영','https://cheremimaka.com/index.html','예시내용',NOW())`;
-  connection.query(sql);
+  let title = req.body.title;
+  let team = req.body.team;
+  let name = req.body.name;
+  let pageurl = req.body.pageurl;
+  let content = req.body.content;
+  let deadline = req.body.deadline;
+  let file = req.body.file;
+  let confirm1 = Boolean(req.body.confirm1);
+  let confirm2 = Boolean(req.body.confirm2);
+  let sql = `insert into checklist (title, team, name, pageurl, content, deadline, file, confirm1, confirm2) values (?,?,?,?,?,?,?,?,?)`;
+  let param = [title, team, name, pageurl, content, deadline, file, confirm1, confirm2];
+  connection.query(sql, param);
   res.redirect('/');
+});
+
+app.get('/edit/:id', (req,res) => {
+  let sql = 'select * from checklist where id = ?';
+  connection.query(sql, [req.params.id], (err, results) => {
+    if(err) throw err;
+    res.render("edit.ejs", {records:results});
+  });
+});
+
+app.get('/delete/:id', (req,res) => {
+  let sql = 'delete from checklist where id = ?';
+  connection.query(sql, [req.params.id], (err,results) => {
+    if(err){
+      throw err;
+    }
+  }).then(() => {
+    res.redirect('/');
+  });
 });
 
 app.listen(port, () => {

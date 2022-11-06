@@ -7,7 +7,7 @@
     <title>공홈 요청사항 정의서</title>
     <link rel="stylesheet" href="./css/reset.css" type="text/css" />
     <link rel="stylesheet" href="./css/layout.css" type="text/css"/>
-    <link rel="stylesheet" href="./css/create.css" type="text/css" />
+    <link rel="stylesheet" href="./css/edit.css" type="text/css" />
     <link rel="stylesheet" href="./css/footer.css" type="text/css"/>
 </head>
 <body>
@@ -15,13 +15,13 @@
     <div class="main-wrap">
         <h3>요구사항 작성</h3>
         <div class="create-form-wrap">
-            <form action="/create" method="post">
-                <input type="text" name="title" placeholder="제목" />
-                <input type="text" name="team" placeholder="소속" />
-                <input type="text" name="name" placeholder="성함" />
-                <input type="text" name="pageurl" placeholder="URL (수정 페이지 URL)" />
-                <input type="text" name="content" placeholder="ISSUE (상세내용)" />
-                <input type="date" name="deadline" placeholder="마감기한" />
+            <form action="/edit" method="post">
+                <input type="text" name="title" placeholder="제목" value="<%= records.title %>"/>
+                <input type="text" name="team" placeholder="소속" value="<%= records.team %>"/>
+                <input type="text" name="name" placeholder="성함" value="<%= records.name %>"/>
+                <input type="text" name="pageurl" placeholder="URL (수정 페이지 URL)" value="<%= records.pageurl %>"/>
+                <input type="text" name="content" placeholder="ISSUE (상세내용)" value="<%= records.content %>"/>
+                <input type="date" name="deadline" placeholder="마감기한" value="<%= records.deadline %>"/>
                 <input type="file"/>
                 <div class="confirm1">
                     <div class="vertical-center">

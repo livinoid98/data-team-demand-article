@@ -15,27 +15,42 @@
     <div class="main-wrap">
         <h3>요구사항 정의서</h3>
         <ul class="content-wrap">
+
+            <% for(let i=0; i<records.length; i++){ %>
             <li class="list-wrap">
                 <div class="article-num">
-                    <span>1</span>
+                    <span><%= records[i].id %></span>
                 </div>
                 <div class="article-content">
-                    <h4>공홈 '브랜드'페이지 이미지 늦게 뜨는 이슈 관련</h4>
-                    <p>제안자: <span>성장운영본부 데이터팀 / 최찬영</span></p>
+                    <h4><%= records[i].title %></h4>
+                    <p>제안자: <span><%= records[i].team %></span> / <span><%= records[i].name %></span></p>
                 </div>
                 <div class="button-wrap">
                     <div class="confirm1">
                         <label for="check1">1차검토</label>
-                        <input type="checkbox" id="check1"/>
+                        <% if(records[i].confirm1 === 1){ %>
+                            <img src="./img/confirm_true.png" alt=""/>
+                        <% } %>
+                        <% if(records[i].confirm1 === 0){ %>
+                            <img src="./img/confirm_false.png" alt=""/>
+                        <% } %>
                     </div>
                     <div class="confirm2">
                         <label for="check2">최종완료</label>
-                        <input type="checkbox" id="check2"/>
+                        <% if(records[i].confirm1 === 1){ %>
+                            <img src="./img/confirm_true.png" alt=""/>
+                        <% } %>
+                        <% if(records[i].confirm1 === 0){ %>
+                            <img src="./img/confirm_false.png" alt=""/>
+                        <% } %>
                     </div>
-                    <button class="edit-button"><a href="#none">수정하기</a></button>
-                    <button class="remove-button"><a href="#none"><img src="./img/trash_icon.png" alt=""/></a></button>
+                    <button class="edit-button"><a href="/edit/<%= records[i].id %>">수정하기</a></button>
+                    <button class="remove-button"><a href="/delete/<%= records[i].id %>"><img src="./img/trash_icon.png" alt=""/></a></button>
                 </div>
             </li>
+            <% } %>
+
+
             <div class="create-wrap">
                 <button class="create-button"><a href="/create">글쓰기</a></button>
             </div>
