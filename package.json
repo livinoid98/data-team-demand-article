@@ -2,9 +2,9 @@
   "name": "datateam-checklist",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "web.js",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "node ./web.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "cheremimaka",
@@ -12,6 +12,7 @@
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "mysql2": "^2.1.0"
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
   }
 }

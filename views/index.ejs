@@ -16,36 +16,36 @@
         <h3>요구사항 정의서</h3>
         <ul class="content-wrap">
 
-            <% for(let i=0; i<records.length; i++){ %>
+            <% for(let i=title.length-2; i>=0; i--){ %>
             <li class="list-wrap">
                 <div class="article-num">
-                    <span><%= records[i].id %></span>
+                    <span><%= i+1 %></span>
                 </div>
                 <div class="article-content">
-                    <h4><%= records[i].title %></h4>
-                    <p>제안자: <span><%= records[i].team %></span> / <span><%= records[i].name %></span></p>
+                    <h4><%= title[i] %></h4>
+                    <p>제안자: <span><%= team[i] %></span> / <span><%= name[i] %></span></p>
                 </div>
                 <div class="button-wrap">
                     <div class="confirm1">
                         <label for="check1">1차검토</label>
-                        <% if(records[i].confirm1 === 1){ %>
+                        <% if(confirm1[i] === 'true'){ %>
                             <img src="./img/confirm_true.png" alt=""/>
                         <% } %>
-                        <% if(records[i].confirm1 === 0){ %>
+                        <% if(confirm1[i] === 'false'){ %>
                             <img src="./img/confirm_false.png" alt=""/>
                         <% } %>
                     </div>
                     <div class="confirm2">
                         <label for="check2">최종완료</label>
-                        <% if(records[i].confirm1 === 1){ %>
+                        <% if(confirm2[i] === 'true'){ %>
                             <img src="./img/confirm_true.png" alt=""/>
                         <% } %>
-                        <% if(records[i].confirm1 === 0){ %>
+                        <% if(confirm2[i] === 'false'){ %>
                             <img src="./img/confirm_false.png" alt=""/>
                         <% } %>
                     </div>
-                    <button class="edit-button"><a href="/edit/<%= records[i].id %>">수정하기</a></button>
-                    <button class="remove-button"><a href="/delete/<%= records[i].id %>"><img src="./img/trash_icon.png" alt=""/></a></button>
+                    <button class="edit-button"><a href="/edit/<%= i+1 %>">수정하기</a></button>
+                    <button class="remove-button"><a href="/delete/<%= i+1 %>"><img src="./img/trash_icon.png" alt=""/></a></button>
                 </div>
             </li>
             <% } %>
