@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const ejs = require('ejs');
 const fs = require('fs');
-const port = process.env.PORT; //3000;
+const port = 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -66,10 +66,24 @@ app.post('/create', (req,res) => {
 
 
 app.get('/edit/:id', (req,res) => {
-  let sql = 'select * from checklist where id = ?';
-  connection.query(sql, [req.params.id], (err, results) => {
-    if(err) throw err;
-    res.render("edit.ejs", {records:results});
+  let id = req.params.id - 1;
+  let title = '';
+  let team = '';
+  let name = '';
+  let pageurl = '';
+  let content = '';
+  let deadline = '';
+  let confirm1 = '';
+  let confirm2 = '';
+  fs.readFile('./formList.txt', 'utf8', (err,data) => {
+    if(err){
+      console.log(err);
+    }else{
+      let spliceTemp = data.split('㏇');
+      let updateList = spliceTemp[id];
+      let updateElement = updateList.split('№');
+      res.render("edit.ejs", {title:updateElement[0], team:updateElement[1], name:updateElement[2], pageurl:updateElement[3], content:updateElement[4], deadline:updateElement[5], confirm1:updateElement[6], confirm2:updateElement[7]});
+    }
   });
 });
 
